@@ -1,0 +1,338 @@
+/* =====================================================
+   style.css
+   Tugas Individu 3 - Pengembangan Aplikasi Web
+   Nama  : Jova Pratama Nihanda
+   NIM   : 124140019
+   Kelas : RA
+   ===================================================== */
+
+/* ---------- reset & variabel warna ---------- */
+:root {
+  --biru: #14589a;
+  --biru-tua: #0e3f6f;
+  --oranye: #ff914d;
+  --abu: #f3f5f8;
+  --garis: #d5dbe3;
+  --teks: #2b2f36;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: var(--abu);
+  color: var(--teks);
+  line-height: 1.6;
+}
+
+/* ---------- layout umum ---------- */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* header / navbar pakai flexbox */
+.navbar {
+  background-color: var(--biru);
+  border-bottom: 4px solid var(--oranye);
+}
+
+.navbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.logo {
+  font-size: 22px;
+  color: #fff;
+}
+
+.logo span {
+  color: var(--oranye);
+}
+
+.navbar nav {
+  display: flex;
+  gap: 8px;
+}
+
+.navbar nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+  background-color: var(--biru-tua);
+}
+
+/* isi halaman pakai grid dua kolom */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1.7fr;
+  gap: 24px;
+  align-items: start;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.layout-detail {
+  grid-template-columns: 1.6fr 1fr;
+}
+
+/* ---------- box ---------- */
+.box {
+  background-color: #fff;
+  border: 1px solid var(--garis);
+  border-top: 4px solid var(--oranye);
+  border-radius: 10px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.box + .box {
+  margin-top: 24px;
+}
+
+.box h2 {
+  color: var(--biru);
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.box p {
+  font-size: 14.5px;
+  margin-bottom: 14px;
+}
+
+.box h3 {
+  font-size: 15px;
+  color: var(--biru-tua);
+  margin: 16px 0 6px;
+}
+
+/* ---------- tabel ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+caption {
+  text-align: left;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  padding: 6px 0;
+  color: var(--biru-tua);
+}
+
+th,
+td {
+  border: 1px solid var(--garis);
+  padding: 9px 10px;
+  text-align: left;
+}
+
+thead th {
+  background-color: var(--biru);
+  color: #fff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f6f9fc;
+}
+
+tbody tr:hover {
+  background-color: #fff1e6;
+  transition: background-color 0.3s;
+}
+
+/* tabel detail: kolom pertama jadi label */
+.tabel-detail th {
+  width: 35%;
+  background-color: #eaf1f8;
+  color: var(--biru-tua);
+}
+
+/* ---------- form ---------- */
+fieldset {
+  border: 1px solid var(--garis);
+  border-radius: 8px;
+  padding: 16px 18px 18px;
+  margin-bottom: 18px;
+}
+
+legend {
+  padding: 0 8px;
+  font-weight: bold;
+  color: var(--biru);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 16px;
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid #aab4c0;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--biru);
+  box-shadow: 0 0 0 3px rgba(20, 88, 154, 0.2);
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* radio & checkbox berjajar */
+.pilihan {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+}
+
+.pilihan label {
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 0;
+}
+
+.catatan {
+  font-size: 12.5px;
+  color: #6b7280;
+  margin-top: 3px;
+  margin-bottom: 0;
+}
+
+/* ---------- tombol ---------- */
+.aksi {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+}
+
+.btn-utama {
+  background-color: var(--oranye);
+  color: #fff;
+}
+
+.btn-utama:hover {
+  background-color: #f07a2e;
+}
+
+.btn-sekunder {
+  background-color: #e3e8ee;
+  color: var(--teks);
+}
+
+.btn-sekunder:hover {
+  background-color: #d2d9e2;
+}
+
+/* ---------- khusus halaman detail ---------- */
+.status {
+  display: inline-block;
+  background-color: #fff1e6;
+  color: #c2570c;
+  border: 1px solid var(--oranye);
+  padding: 1px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+#contoh-query {
+  background-color: #14233a;
+  color: #e8eef7;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 12.5px;
+  padding: 12px 14px;
+  border-radius: 6px;
+  word-break: break-all;
+  margin-bottom: 14px;
+}
+
+#contoh-query b {
+  color: var(--oranye);
+}
+
+/* ---------- footer ---------- */
+footer {
+  background-color: var(--biru);
+  color: #fff;
+  text-align: center;
+  font-size: 13px;
+  padding: 14px 10px;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 800px) {
+  .layout,
+  .layout-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar-inner {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

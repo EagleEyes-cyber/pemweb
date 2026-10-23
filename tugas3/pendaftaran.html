@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pendaftaran Workshop Web</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <h1 class="logo">Workshop<span>Web</span></h1>
+      <nav>
+        <a href="pendaftaran.html" class="active">Pendaftaran</a>
+        <a href="detail.html">Detail Pendaftar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container layout">
+
+    <!-- kolom kiri : informasi kegiatan -->
+    <aside>
+      <section class="box">
+        <h2>Workshop Dasar Web</h2>
+        <p>
+          Workshop ini diadakan untuk mahasiswa Teknik Informatika yang ingin
+          belajar membuat halaman web dengan HTML dan CSS dari dasar. Silakan
+          isi formulir di samping untuk mendaftar.
+        </p>
+
+        <table>
+          <caption>Jadwal Kegiatan</caption>
+          <thead>
+            <tr>
+              <th>Sesi</th>
+              <th>Waktu</th>
+              <th>Materi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Pagi</td>
+              <td>08.00 - 10.00</td>
+              <td>Tabel &amp; Form</td>
+            </tr>
+            <tr>
+              <td>Siang</td>
+              <td>13.00 - 15.00</td>
+              <td>Flexbox &amp; Grid</td>
+            </tr>
+            <tr>
+              <td>Sore</td>
+              <td>15.30 - 17.00</td>
+              <td>Latihan Mandiri</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </aside>
+
+    <!-- kolom kanan : formulir pendaftaran -->
+    <section class="box">
+      <h2>Formulir Pendaftaran</h2>
+      <p>Semua kolom bertanda <strong>*</strong> wajib diisi.</p>
+
+      <!-- method GET, data dikirim lewat query string ke detail.html -->
+      <form id="form-daftar" method="get" action="detail.html">
+
+        <fieldset>
+          <legend>Data Diri</legend>
+          <div class="form-grid">
+            <div class="full">
+              <label for="nama">Nama Lengkap *</label>
+              <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+            </div>
+
+            <div>
+              <label for="nim">NIM *</label>
+              <input type="text" id="nim" name="nim" placeholder="Contoh: 124140019"
+                     pattern="[0-9]{9}" title="NIM terdiri dari 9 angka" required>
+            </div>
+
+            <div>
+              <label for="kelas">Kelas *</label>
+              <select id="kelas" name="kelas" required>
+                <option value="">Pilih kelas</option>
+                <option value="RA">RA</option>
+                <option value="RB">RB</option>
+                <option value="RC">RC</option>
+                <option value="RD">RD</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" placeholder="nama@student.itera.ac.id" required>
+            </div>
+
+            <div>
+              <label for="telepon">No. Telepon</label>
+              <input type="tel" id="telepon" name="telepon" placeholder="08xxxxxxxxxx">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Data Kegiatan</legend>
+          <div class="form-grid">
+            <div class="full">
+              <label>Sesi yang Diikuti *</label>
+              <div class="pilihan">
+                <label for="sesi-pagi">
+                  <input type="radio" id="sesi-pagi" name="sesi" value="pagi" required> Pagi
+                </label>
+                <label for="sesi-siang">
+                  <input type="radio" id="sesi-siang" name="sesi" value="siang"> Siang
+                </label>
+                <label for="sesi-sore">
+                  <input type="radio" id="sesi-sore" name="sesi" value="sore"> Sore
+                </label>
+              </div>
+            </div>
+
+            <div class="full">
+              <label>Topik yang Diminati</label>
+              <div class="pilihan">
+                <label for="minat-html">
+                  <input type="checkbox" id="minat-html" name="minat" value="html"> HTML
+                </label>
+                <label for="minat-css">
+                  <input type="checkbox" id="minat-css" name="minat" value="css"> CSS
+                </label>
+                <label for="minat-layout">
+                  <input type="checkbox" id="minat-layout" name="minat" value="layout"> Layout Responsif
+                </label>
+              </div>
+            </div>
+
+            <div class="full">
+              <label for="alasan">Alasan Mengikuti Workshop</label>
+              <textarea id="alasan" name="alasan" rows="3" placeholder="Tulis alasan singkat"></textarea>
+              <p class="catatan">Maksimal beberapa kalimat saja.</p>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="aksi">
+          <button type="submit" class="btn btn-utama">Daftar Sekarang</button>
+          <button type="reset" class="btn btn-sekunder">Reset</button>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Tugas Individu 3 - Pengembangan Aplikasi Web | Jova Pratama Nihanda - 124140019 - RA</p>
+  </footer>
+
+</body>
+</html>

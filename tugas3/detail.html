@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Pendaftar - Workshop Web</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <h1 class="logo">Workshop<span>Web</span></h1>
+      <nav>
+        <a href="pendaftaran.html">Pendaftaran</a>
+        <a href="detail.html" class="active">Detail Pendaftar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container layout layout-detail">
+
+    <!-- kolom kiri : detail pendaftar (data dummy) -->
+    <section class="box">
+      <h2>Detail Informasi Pendaftar</h2>
+      <p>
+        Pendaftaran berhasil dicatat. Berikut data yang terdaftar
+        <em>(data pada halaman ini masih dummy)</em>.
+      </p>
+
+      <table class="tabel-detail">
+        <caption>Data Pendaftar</caption>
+        <tbody>
+          <tr>
+            <th scope="row">Nama Lengkap</th>
+            <td>Jova Pratama Nihanda</td>
+          </tr>
+          <tr>
+            <th scope="row">NIM</th>
+            <td>124140019</td>
+          </tr>
+          <tr>
+            <th scope="row">Kelas</th>
+            <td>RA</td>
+          </tr>
+          <tr>
+            <th scope="row">Email</th>
+            <td>jova.124140019@student.itera.ac.id</td>
+          </tr>
+          <tr>
+            <th scope="row">No. Telepon</th>
+            <td>0812-3456-7890</td>
+          </tr>
+          <tr>
+            <th scope="row">Sesi</th>
+            <td>Pagi (08.00 - 10.00)</td>
+          </tr>
+          <tr>
+            <th scope="row">Topik Diminati</th>
+            <td>HTML, CSS, Layout Responsif</td>
+          </tr>
+          <tr>
+            <th scope="row">Alasan</th>
+            <td>Ingin memahami dasar pembuatan halaman web.</td>
+          </tr>
+          <tr>
+            <th scope="row">Status</th>
+            <td><span class="status">Terdaftar</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="aksi" style="margin-top: 18px;">
+        <a href="pendaftaran.html" class="btn btn-utama">Kembali ke Pendaftaran</a>
+      </div>
+    </section>
+
+    <!-- kolom kanan : desain query string -->
+    <aside>
+      <section class="box">
+        <h2>Desain Query String</h2>
+        <p>
+          Form pendaftaran memakai method <strong>GET</strong>, jadi isi form
+          dikirim lewat URL dalam bentuk query string.
+        </p>
+
+        <h3>Contoh URL</h3>
+        <div id="contoh-query">
+          detail.html<b>?</b>nama=Jova+Pratama+Nihanda<b>&amp;</b>nim=124140019<b>&amp;</b>kelas=RA<b>&amp;</b>email=jova.124140019%40student.itera.ac.id<b>&amp;</b>telepon=081234567890<b>&amp;</b>sesi=pagi<b>&amp;</b>minat=html<b>&amp;</b>minat=css<b>&amp;</b>minat=layout<b>&amp;</b>alasan=Ingin+memahami+dasar+web
+        </div>
+
+        <table>
+          <caption>Parameter Query String</caption>
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Asal Input</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>nama</td>
+              <td>text</td>
+            </tr>
+            <tr>
+              <td>nim</td>
+              <td>text (pattern)</td>
+            </tr>
+            <tr>
+              <td>kelas</td>
+              <td>select</td>
+            </tr>
+            <tr>
+              <td>email</td>
+              <td>email</td>
+            </tr>
+            <tr>
+              <td>telepon</td>
+              <td>tel</td>
+            </tr>
+            <tr>
+              <td>sesi</td>
+              <td>radio</td>
+            </tr>
+            <tr>
+              <td>minat</td>
+              <td>checkbox (bisa lebih dari satu)</td>
+            </tr>
+            <tr>
+              <td>alasan</td>
+              <td>textarea</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>Tugas Individu 3 - Pengembangan Aplikasi Web | Jova Pratama Nihanda - 124140019 - RA</p>
+  </footer>
+
+</body>
+</html>
